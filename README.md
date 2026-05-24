@@ -1,5 +1,7 @@
 # MarkdownThing
 
+> **Archived — no longer maintained.** This repository is archived. The source and [releases](https://github.com/bbuckle1959/MarkdownThing/releases) remain available, but there will be no further updates, bug fixes, or support. Pull requests and issues will not be reviewed.
+
 Open a `.md` file on Windows, edit it with a live preview, and export to HTML, PDF, PNG, Word or Text.
 
 ![.NET 8](https://img.shields.io/badge/.NET-8.0-512BD4?style=flat&logo=dotnet)
