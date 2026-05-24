@@ -123,6 +123,8 @@ Rendering uses [Markdig](https://github.com/xoofx/markdig) with advanced extensi
 
 ## Third-party licenses
 
+MarkdownThing depends on the open-source libraries below. Without them, this application would not have been possible — thank you to their authors and maintainers.
+
 | Library | License |
 |---------|---------|
 | [Markdig](https://github.com/xoofx/markdig) | BSD-2-Clause |
