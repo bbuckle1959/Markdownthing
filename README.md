@@ -1,156 +1,121 @@
 # MarkdownThing
 
-> **Archived — no longer maintained.** This repository is archived. The source and [releases](https://github.com/bbuckle1959/MarkdownThing/releases) remain available, but there will be no further updates, bug fixes, or support. Pull requests and issues will not be reviewed.
+> **Archived — no longer maintained.** This project is archived. You can still download the app from [Releases](https://github.com/bbuckle1959/MarkdownThing/releases), but there will be no new versions, fixes, or support.
 
-Open a `.md` file on Windows, edit it with a live preview, and export to HTML, PDF, PNG, Word or Text.
+**MarkdownThing** is a free Windows app for opening Markdown files (`.md`). View your document with a live preview, edit when you need to, and save or export as **PDF**, **PNG**, **HTML**, **Word**, or plain **text**.
 
-![.NET 8](https://img.shields.io/badge/.NET-8.0-512BD4?style=flat&logo=dotnet)
 ![Windows](https://img.shields.io/badge/Platform-Windows-0078D6?style=flat&logo=windows)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-## Who it's for
+## Download and install
 
-- You write notes or docs in Markdown and need to hand someone a **PDF**, **PNG**, **Word**, **HTML** or **Text** file.
-- You double-click `README.md` and want a proper viewer, not Notepad.
-- You have a folder of `.md` files and want them converted in one go (GUI batch or CLI).
+1. Open **[Releases](https://github.com/bbuckle1959/MarkdownThing/releases)** on GitHub.
+2. Download the latest **`MarkdownThing_Setup_….exe`** (installer) **or** **`MarkdownThing_Portable_….zip`** (no installer — unzip and run `MarkdownThing.exe`).
 
-## Download
+| Download | What you get |
+|----------|----------------|
+| **Installer** (~150 MB) | Installs the app and can register `.md` files to open with MarkdownThing. Includes everything needed to run. |
+| **Portable zip** (~150 MB) | Same app without installing — useful on a USB stick or if you cannot install software. |
 
-**[Releases](https://github.com/bbuckle1959/MarkdownThing/releases)** — pick `MarkdownThing_Setup_x.x.x.exe` (installer) or `MarkdownThing_Portable_x.x.x.zip` (unzip and run, no install).
+**Windows:** Windows 10 or 11 (64-bit).
 
-| Option | Size (approx.) | Notes |
-|--------|----------------|-------|
-| Installer (self-contained) | ~150 MB | Includes .NET runtime; optional `.md` association |
-| Portable zip | Same payload | Handy for USB or locked-down PCs |
-| Framework-dependent build | ~10 MB | Build yourself; needs [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0) |
+**WebView2:** The preview pane needs [Microsoft WebView2](https://developer.microsoft.com/microsoft-edge/webview2/). Most PCs already have it; if the app asks you to install it, use the link in the message.
 
-**Also needs:** [WebView2](https://developer.microsoft.com/microsoft-edge/webview2/) (already on most Windows 11 machines and recent Windows 10).
+**First PDF or PNG export:** The first time you export to PDF or PNG, the app downloads a one-time browser component (~150 MB) so the file matches what you see in the preview. Later exports do not download again.
 
-**First PDF or PNG export:** the app downloads Chromium once (~150 MB) via PuppeteerSharp so output matches the preview. Later exports skip that step.
+**Windows SmartScreen:** The installer is not code-signed. Windows may show an “unknown publisher” warning — choose *More info* → *Run anyway* if you trust this download, or use the portable zip.
 
-**SmartScreen:** the installer is not code-signed yet. If Windows warns you, that's expected for unsigned hobby releases — build from source if you prefer.
+**Upgrading from MD Convert:** If you used the older *MD Convert* app, your settings are moved automatically from the old folder to `%AppData%\MarkdownThing\` the first time you run MarkdownThing. Installing over MD Convert should keep your setup.
 
-Upgrading from **MD Convert**: settings in `%AppData%\MDConvert\` are moved to `%AppData%\MarkdownThing\` on first launch. The installer keeps the same upgrade ID, so an in-place install over MD Convert should work.
+### Install with winget (optional)
 
-### winget
-
-A manifest lives in [`manifests/`](manifests/) for submission to [winget-pkgs](https://github.com/microsoft/winget-pkgs). After a release is published:
+If the package is available on your PC:
 
 ```text
 winget install bbuckle1959.MarkdownThing
 ```
 
-(Works only after the package is accepted upstream and the installer URL + hash in the manifest match the release.)
+## What you can do
 
-## Features
+- Open `.md` files by double-clicking (after using the installer’s file association) or via **File → Open**
+- **Edit** with a live **preview** that updates as you type
+- Choose **preview themes** (Default, GitHub-style, Print-friendly) and optional dark preview or dark editor
+- **Export** to PDF, PNG, HTML, Word (`.docx`), or plain text — PDF and PNG match the preview
+- Set **PDF page size and margins** (A4, Letter, etc.) before exporting
+- **Export a whole folder** of Markdown files at once (File menu)
+- **Drag and drop** files onto the window; **recent files** list; **Check for updates** under Help (while releases exist)
 
-- Split **edit + preview** (preview updates as you type)
-- **Preview themes:** Default, GitHub-style, Print-friendly; optional dark preview and dark editor
-- **Export:** PDF, PNG, HTML, Word (.docx), plain text — PDF and PNG use the same HTML as the preview
-- **PDF page setup:** paper size and margins (A4, Letter, etc.)
-- **Batch folder export** from the File menu
-- **Command-line** conversion for scripts
-- Recent files, drag-and-drop, optional `.md` file association (installer)
-- **Help → Check for updates** (GitHub releases)
+**Word export** supports headings, lists, bold/italic, quotes, code blocks, and links. Complex layouts (e.g. some tables) appear in the preview and in PDF/HTML/PNG but may not transfer fully into Word.
 
-## Usage
+## Quick start
 
-### GUI
+1. Run **MarkdownThing** and open a `.md` file (**Ctrl+O** or drag onto the window).
+2. Press **Ctrl+E** to turn **edit mode** on or off (split view: editor + preview).
+3. Use **File → Export** (or the shortcuts below) to create PDF, PNG, HTML, Word, or text files.
+
+Use the **View** menu for preview theme, dark mode, word wrap, and zoom in the preview (**Ctrl++**, **Ctrl+-**, **Ctrl+0**).
+
+## Keyboard shortcuts
 
 | Action | Shortcut |
 |--------|----------|
 | New | Ctrl+N |
 | Open | Ctrl+O |
 | Save / Save As | Ctrl+S / Ctrl+Shift+S |
-| Toggle edit mode | Ctrl+E |
+| Edit mode on/off | Ctrl+E |
 | Find | Ctrl+F |
 | Go to line | Ctrl+G |
+| Reload file from disk | F5 |
 | Insert date/time | Ctrl+Shift+D |
-| Copy HTML preview | Ctrl+Shift+C |
-| Reload from disk | F5 |
+| Copy preview as HTML | Ctrl+Shift+C |
 | Preview zoom in / out / reset | Ctrl++ / Ctrl+- / Ctrl+0 |
 | Heading 1–6 (in editor) | Ctrl+1 … Ctrl+6 |
 | Export PDF / PNG / HTML / Word / Text | Ctrl+P / Ctrl+Shift+P / Ctrl+H / Ctrl+W / Ctrl+T |
 
-**View** menu: preview theme, dark preview, dark editor, word wrap, preview zoom.
+**Tips:** **File → Reload from disk** (F5) discards unsaved edits and reloads the saved file. **File → Export → PDF page setup** sets paper size before PDF export. **File → Export → Batch folder** converts every `.md` file in a folder. The toolbar image button inserts a picture from your PC when nothing is selected in the editor.
 
-**File → Reload from disk** (F5) reloads the saved file. **Open containing folder** appears when the document is saved to disk.
+## Command line (advanced)
 
-**Edit → Find** (Ctrl+F), **Go to line** (Ctrl+G), **Copy HTML preview**, and **Insert date/time**. The image toolbar button opens a file picker when nothing is selected.
-
-**File → Export → PDF page setup** before printing to PDF.
-
-**File → Export → Batch folder** — all `.md` files under a directory, same format.
-
-### Command line
+You can convert files without opening the full window:
 
 ```text
 MarkdownThing.exe notes.md --pdf report.pdf
-MarkdownThing.exe notes.md --png preview.png --html out.html --docx out.docx
-MarkdownThing.exe --batch C:\Docs\Notes --format png
-MarkdownThing.exe notes.md --pdf out.pdf --theme GitHub --dark --paper Letter
+MarkdownThing.exe notes.md --png slide.png --html page.html --docx report.docx
+MarkdownThing.exe --batch C:\Docs\Notes --format pdf
 ```
 
-Run `MarkdownThing.exe --help` for the full list. Opening a file by itself (e.g. double-click) still launches the GUI.
+Run `MarkdownThing.exe --help` for all options. Double-clicking a `.md` file still opens the normal app.
 
-## How it compares
+## How it compares to other tools
 
-| Tool | MarkdownThing | Typical alternative |
-|------|---------------|---------------------|
-| Pandoc | GUI + preview; PDF matches on-screen layout | CLI; steeper learning curve |
-| VS Code | Focused on `.md` only; exports without an editor install | Needs extensions/setup for Word/PDF |
-| Obsidian | Lighter install; offline export to office formats | Vault model; heavier than “open one file” |
-| Typora | MIT license; similar “see and export” idea | Paid WYSIWYG editor (different workflow) |
+| | MarkdownThing | Typical alternative |
+|---|---------------|---------------------|
+| **Pandoc** | Point-and-click + preview; PDF looks like the screen | Powerful command-line tool; more setup |
+| **VS Code** | Just for Markdown; export built in | General code editor; extensions needed for some exports |
+| **Obsidian** | Simple “open a file and export” | Notes vault; heavier if you only need one file |
+| **Typora** | Free app; edit and export | Paid editor; different workflow |
 
-Word export handles headings, lists, emphasis, quotes, code blocks, and links. Tables and other advanced constructs are preview/HTML/PDF only for now — not a full layout engine for complex documents.
+## Markdown features
 
-## Build from source
+The app understands common Markdown, including **tables**, **task lists** (`- [ ]`), **fenced code blocks**, **footnotes**, and more.
 
-```bash
-git clone https://github.com/bbuckle1959/MarkdownThing.git
-cd MarkdownThing
-dotnet build MarkdownThing.sln -c Release
-dotnet run --project MarkdownThing.csproj -c Release
-```
+## Open-source libraries
 
-**Installer:** `Setup\Build-Installer.bat` (needs [Inno Setup 6](https://jrsoftware.org/isinfo.php)).
-
-**Portable zip:** `Setup\Build-Portable.bat`.
-
-See [Setup/README.md](Setup/README.md) for publish options (self-contained vs framework-dependent).
-
-## Markdown support
-
-Rendering uses [Markdig](https://github.com/xoofx/markdig) with advanced extensions: tables, task lists, fenced code, footnotes, etc.
-
-## Third-party licenses
-
-MarkdownThing depends on the open-source libraries below. Without them, this application would not have been possible — thank you to their authors and maintainers.
+MarkdownThing was built with help from these projects — without them, this app would not exist. Thank you to their authors.
 
 | Library | License |
 |---------|---------|
 | [Markdig](https://github.com/xoofx/markdig) | BSD-2-Clause |
-| [Microsoft.Web.WebView2](https://www.nuget.org/packages/Microsoft.Web.WebView2) | BSD-3-Clause |
+| [Microsoft WebView2](https://developer.microsoft.com/microsoft-edge/webview2/) | BSD-3-Clause |
 | [PuppeteerSharp](https://github.com/hardkoded/puppeteer-sharp) | MIT |
 | [DocumentFormat.OpenXml](https://github.com/dotnet/Open-XML-SDK) | MIT |
 
-See [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt) for full license texts.
-
-## Project structure
-
-| Area | Location |
-|------|----------|
-| WinForms UI | `Form1*.cs`, dialogs |
-| Conversion / export | `MDConvertLib/` |
-| Settings | `%AppData%\MarkdownThing\` (migrated from legacy `%AppData%\MDConvert\` on first launch) |
-| Installer | `Setup/` |
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md). Pull requests are welcome — fork, branch, build, PR.
-
-Security reports: see [SECURITY.md](SECURITY.md).
+Full license texts: [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt).
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+This project is [MIT licensed](LICENSE). You may use, modify, and share the code under those terms.
+
+## Source code
+
+The full source is in this repository for reference only. The repo is **archived** — pull requests and issues are not accepted. Build notes for developers are in [Setup/README.md](Setup/README.md).
