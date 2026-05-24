@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>MarkdownThing</RootNamespace>
+    <AssemblyName>MarkdownThing</AssemblyName>
+    <AssemblyTitle>MarkdownThing</AssemblyTitle>
+    <Product>MarkdownThing</Product>
+    <Description>Markdown viewer and exporter for Windows (PDF, PNG, HTML, Word, text)</Description>
+    <Copyright>Copyright © 2024-2026 Barry Buckle</Copyright>
+    <Authors>Barry Buckle</Authors>
+    <Version>1.2.0</Version>
+    <ApplicationIcon>milcot.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="MDConvertLib\bin\**" />
+    <Compile Remove="MDConvertLib\obj\**" />
+    <None Remove="MDConvertLib\bin\**" />
+    <None Remove="MDConvertLib\obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="milcot.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.4.1" />
+    <PackageReference Include="Markdig" Version="0.44.0" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3650.58" />
+    <PackageReference Include="PuppeteerSharp" Version="20.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="THIRD-PARTY-NOTICES.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

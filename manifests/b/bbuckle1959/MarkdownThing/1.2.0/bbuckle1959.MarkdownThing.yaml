@@ -1,0 +1,28 @@
+# Package manifest for winget-pkgs submission.
+# Update InstallerSha256 after publishing the release asset.
+PackageIdentifier: bbuckle1959.MarkdownThing
+PackageVersion: 1.2.0
+PackageLocale: en-US
+Publisher: Barry Buckle
+PublisherUrl: https://github.com/bbuckle1959
+PublisherSupportUrl: https://github.com/bbuckle1959/MarkdownThing/issues
+PackageName: MarkdownThing
+PackageUrl: https://github.com/bbuckle1959/MarkdownThing
+License: MIT
+LicenseUrl: https://github.com/bbuckle1959/MarkdownThing/blob/main/LICENSE
+ShortDescription: Markdown viewer and exporter for Windows (PDF, PNG, HTML, Word, text).
+Moniker: markdownthing
+Tags:
+  - markdown
+  - pdf
+  - png
+  - docx
+  - viewer
+Installers:
+  - Architecture: x64
+    InstallerType: exe
+    InstallerUrl: https://github.com/bbuckle1959/MarkdownThing/releases/download/v1.2.0/MarkdownThing_Setup_1.2.0.exe
+    InstallerSha256: PLACEHOLDER_UPDATE_AFTER_RELEASE
+    Scope: user
+ManifestType: singleton
+ManifestVersion: 1.6.0
