@@ -1,7 +1,5 @@
 # MarkdownThing
 
-> **This repository is archived and no longer maintained.** There will be no new releases, bug fixes, or support. The last build remains on **[Releases](https://github.com/bbuckle1959/MarkdownThing/releases)**. You are welcome to fork the project and continue development on your own.
-
 Free Windows app for **viewing and editing** Markdown (`.md`) with a live preview. Export to **PDF**, **PNG**, **HTML**, **Word**, or plain **text**.
 
 ![Windows](https://img.shields.io/badge/Platform-Windows-0078D6?style=flat&logo=windows)
