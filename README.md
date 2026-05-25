@@ -20,8 +20,6 @@ From **[Releases](https://github.com/bbuckle1959/MarkdownThing/releases)**, down
 
 **SmartScreen:** The installer is not code-signed; Windows may warn about an unknown publisher. Use *More info* → *Run anyway*, or the portable zip.
 
-If you previously used **MD Convert**, settings move automatically to `%AppData%\MarkdownThing\` on first launch.
-
 ## Features
 
 - Live **edit + preview**; themes and optional dark mode
