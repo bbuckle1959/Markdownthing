@@ -11,8 +11,8 @@ From **[Releases](https://github.com/bbuckle1959/MarkdownThing/releases)**, down
 
 | File | Notes |
 |------|--------|
-| `MarkdownThing_Setup_….exe` | Installer (~150 MB, self-contained). Optional `.md` file association. |
-| `MarkdownThing_Portable_….zip` | Unzip and run `MarkdownThing.exe` — no install. |
+| `MarkdownThing_Setup_1.2.0.zip` | Extract and run setup (~55 MB). Optional `.md` file association. |
+| `MarkdownThing_Portable_1.2.0.zip` | Unzip and run `MarkdownThing.exe` — no install (~77 MB). |
 
 **Requirements:** Windows 10 or 11 (64-bit). [WebView2](https://developer.microsoft.com/microsoft-edge/webview2/) for the preview (usually already installed). The first PDF or PNG export downloads a one-time component (~150 MB) so output matches the preview.
 
@@ -39,6 +39,9 @@ Word export covers headings, lists, emphasis, quotes, code, and links; some comp
 | Preview zoom | Ctrl++ / Ctrl+- / Ctrl+0 |
 
 Run `MarkdownThing.exe --help` for command-line conversion (`--pdf`, `--png`, `--batch`, etc.).
+
+## Building From Source
+This project is built using .NET and WinForms. To clone and build the project locally, please see the step-by-step instructions in the [Setup/README.md](Setup/README.md) file.
 
 ## Acknowledgments
 
